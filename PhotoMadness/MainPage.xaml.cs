@@ -2,23 +2,29 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void LoginButton_Clicked(object sender, EventArgs e)
         {
-            count++;
+            bool isUsernameEmpty = string.IsNullOrEmpty(UsernameEntry.Text);
+            bool isPasswordEmpty = string.IsNullOrEmpty(PasswordEntry.Text);
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            if (isUsernameEmpty)
+            {
+                UsernameEntry.Placeholder = "Vul iets in";
+            }
+            else if (isPasswordEmpty)
+            {
+                PasswordEntry.Placeholder = "Vul iets in";
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            {
+                Navigation.PushAsync(new HomePage());
+            }
         }
     }
 
