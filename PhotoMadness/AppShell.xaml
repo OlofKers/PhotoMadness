@@ -12,27 +12,4 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
-    <FlyoutItem
-        Title="Feed">
-        <ShellContent 
-            ContentTemplate="{DataTemplate local:HomePage}"/>            
-    </FlyoutItem>
-    
-    <FlyoutItem
-        Title="Shop">
-        <ShellContent 
-            ContentTemplate="{DataTemplate local:ShopPage}"/>
-    </FlyoutItem>
-
-    <Shell.FlyoutHeader>
-        <Grid 
-            BackgroundColor="#F0A64D" 
-            Padding="10">
-            <Label
-                Text="PhotoMadness"
-                FontSize="24"
-                TextColor="Black"/>
-        </Grid>
-    </Shell.FlyoutHeader>
-
 </Shell>

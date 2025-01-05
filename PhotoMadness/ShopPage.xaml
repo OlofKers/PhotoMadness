@@ -2,11 +2,122 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhotoMadness.ShopPage"
-             Title="ShopPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="ShopPage"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="False">
+
+    <VerticalStackLayout Padding="10" BackgroundColor="#ff900a">
+
+        <!-- Header Section -->
+        <Grid Padding="10" BackgroundColor="#F0A64D" HeightRequest="50" WidthRequest="420">
+            <Label Text="Shop"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold" />
+            <Image Source="small_logo.png"
+                   HeightRequest="40"
+                   WidthRequest="40"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" />
+            <Image Source="profileicon.png"
+                   HeightRequest="40"
+                   WidthRequest="40"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <!-- Product Items -->
+        <ScrollView>
+            <VerticalStackLayout Spacing="10" Padding="10">
+
+                <!-- Single Chip Item -->
+                <Border StrokeShape="RoundRectangle 15" BackgroundColor="#F0A64D" Padding="20" StrokeThickness="0" Margin="10">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="chip.png" HeightRequest="50" />
+                        <Label Text="1 Chip" FontSize="18" HorizontalTextAlignment="Center" />
+                        <Label Text="€ 0,99" FontSize="16" HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Discounted Chips Item -->
+                <Border StrokeShape="RoundRectangle 15" BackgroundColor="#F0A64D" Padding="20" StrokeThickness="0" Margin="10">
+                    <Grid>
+                        <Border StrokeShape="RoundRectangle 5" BackgroundColor="#FF0000" StrokeThickness="0" HorizontalOptions="Start" VerticalOptions="Start" Margin="5">
+                            <Label Text="30% OFF"
+                                   TextColor="White"
+                                   FontSize="12"
+                                   Padding="5"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center" />
+                        </Border>
+                        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Image Source="chip.png" HeightRequest="50" />
+                            <Label Text="10 Chips" FontSize="18" HorizontalTextAlignment="Center" />
+                            <Label Text="€ 6,99" FontSize="16" HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <!-- Membership Section -->
+                <Border StrokeShape="RoundRectangle 15" BackgroundColor="#F0A64D" Padding="20" StrokeThickness="0" Margin="10">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="Become a Supermember!" 
+                               FontSize="20" 
+                               HorizontalTextAlignment="Center" 
+                               FontAttributes="Bold" />
+                        <Label Text="Benefits:" FontSize="16" />
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="* Benefit 1
+                                          " FontSize="14" />
+                                    <Span Text="* Benefit 2
+                                          " FontSize="14" />
+                                    <Span Text="* Benefit 3
+                                          " FontSize="14" />
+                                    <Span Text="* Benefit 4
+                                          " FontSize="14" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </VerticalStackLayout>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom Section -->
+        <Border StrokeShape="RoundRectangle 15" BackgroundColor="#F0A64D" Padding="10" StrokeThickness="0" Margin="10">
+            <Grid VerticalOptions="Center" HeightRequest="60" ColumnDefinitions="Auto,*,Auto">
+                <!-- Chip Icon -->
+                <Image Source="chip.png"
+                       HeightRequest="60"
+                       WidthRequest="60"
+                       VerticalOptions="Center"
+                       Grid.Column="0" />
+
+                <!-- Number -->
+                <Label Text="999"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Grid.Column="1" />
+
+                <!-- Add Button -->
+                <Button Text="+"
+                        BackgroundColor="#FFFFFF"
+                        TextColor="#F0A64D"
+                        CornerRadius="15"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        HorizontalOptions="End"
+                       VerticalOptions="Center"
+                        Grid.Column="2" />
+            </Grid>
+        </Border>
+
+
     </VerticalStackLayout>
 </ContentPage>

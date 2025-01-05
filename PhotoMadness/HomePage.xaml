@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhotoMadness.HomePage"
              NavigationPage.HasBackButton="False"
-             Title="Feed">
+             Title="Tasks"
+             xmlns:local="clr-namespace:PhotoMadness"
+            BackgroundColor="#F0A64D">
 
-    <Shell.TitleView>
-        <Grid>
-            <ImageButton
-                Source="small_icon.png"
-                Clicked="ImageButton_Clicked"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"/>
-        </Grid>
-    </Shell.TitleView>
-    <StackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />
-    </StackLayout>
-</ContentPage>
+    <NavigationPage Title="Shop">
+        <x:Arguments>
+            <local:ShopPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Camera">
+        <x:Arguments>
+            <local:CamPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Tasks">
+        <x:Arguments>
+            <local:TaskPage />
+        </x:Arguments>
+    </NavigationPage>
+
+</TabbedPage>
