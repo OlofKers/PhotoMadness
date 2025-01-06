@@ -8,7 +8,7 @@
             InitializeComponent();
         }
 
-        private void LoginButton_Clicked(object sender, EventArgs e)
+        private async void LoginButton_Clicked(object sender, EventArgs e)
         {
             bool isUsernameEmpty = string.IsNullOrEmpty(UsernameEntry.Text);
             bool isPasswordEmpty = string.IsNullOrEmpty(PasswordEntry.Text);
@@ -23,7 +23,7 @@
             }
             else
             {
-                Navigation.PushAsync(new HomePage());
+                await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
             }
         }
     }
