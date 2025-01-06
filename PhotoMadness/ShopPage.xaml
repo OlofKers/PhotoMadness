@@ -87,17 +87,17 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <!-- Bottom Section -->
+        <!--Chip Count Section-->
         <Border StrokeShape="RoundRectangle 15" BackgroundColor="#F0A64D" Padding="10" StrokeThickness="0" Margin="10">
             <Grid VerticalOptions="Center" HeightRequest="60" ColumnDefinitions="Auto,*,Auto">
-                <!-- Chip Icon -->
+
                 <Image Source="chip.png"
                        HeightRequest="60"
                        WidthRequest="60"
                        VerticalOptions="Center"
                        Grid.Column="0" />
 
-                <!-- Number -->
+                
                 <Label Text="999"
                        FontSize="18"
                        FontAttributes="Bold"
@@ -105,7 +105,6 @@
                        HorizontalOptions="Center"
                        Grid.Column="1" />
 
-                <!-- Add Button -->
                 <Button Text="+"
                         BackgroundColor="#FFFFFF"
                         TextColor="#F0A64D"
